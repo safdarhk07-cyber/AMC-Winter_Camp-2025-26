@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+
+<robot name = "simple_box">
+
+   <link name = "base_link">
+
+    <visual>
+        <geometry>
+            <box size = "1 1 0.2"/>
+        </geometry>
+    </visual>
+
+    <visual>
+        <origin xyz="0 0 0.15"/>
+        <geometry>
+            <box size="0.6 0.6 0.1"/>
+        </geometry>
+    </visual>
+
+</link>
+
+ 
+
+    <link name = "arm_1">
+        <visual>
+            <origin xyz = "0.5 0.5 0" rpy = "0 0 0.78539"/>
+            <geometry>
+                <box size = "2 0.2 0.05"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "arm_1_joint" type = "fixed">
+        <parent link = "base_link"/>
+        <child link = "arm_1"/>
+        <origin xyz = "0.5 0.5 0" rpy = "0 0 0"/>
+    </joint>
+
+    <link name = "sphere_1">
+        <visual>
+            <origin xyz = "0 0 0"/>
+            <geometry>
+                <sphere radius = "0.15"/>
+            </geometry>      
+        </visual>
+    </link>
+
+    <joint name = "sphere_1_joint" type = "fixed">
+        <parent link = "arm_1"/>
+        <child link = "sphere_1"/>
+        <origin xyz = "1.1 1.1 0.15"/>
+    </joint>
+
+    <link name = "leg_1">
+        <visual>
+            <origin xyz = "0 0 -0.5"/>
+            <geometry>
+                <cylinder radius = "0.05" length = "1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "leg_1_joint" type = "fixed">
+        <parent link = "arm_1"/>
+        <child link = "leg_1"/>
+        <origin xyz = "1.1 1.1 -0.025"/>
+    </joint>
+
+    <link name="prop_assembly_1">
+
+    
+        <visual>
+          <origin rpy = "1.57 0 0"/>
+            <geometry>
+                <box size="1.65 0.01 0.1"/>
+            </geometry>
+        </visual>
+
+    
+        <visual>
+            <origin rpy="0 0 1.5708"/>
+            <geometry>
+                <box size="1.65 0.1 0.01"/>
+            </geometry>
+        </visual>
+
+    </link>
+
+    <joint name="prop_spin_1" type="continuous">
+        <parent link="sphere_1"/>
+        <child link="prop_assembly_1"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+ 
+    
+
+
+    <link name = "arm_2">
+        <visual>
+            <origin xyz = "0.5 -0.5 0" rpy = "0 0 -0.78539"/>
+            <geometry>
+                <box size = "2 0.2 0.05"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "arm_2_joint" type = "fixed">
+        <parent link = "base_link"/>
+        <child link = "arm_2"/>
+        <origin xyz = "0.5 -0.5 0" rpy = "0 0 0"/>
+    </joint>
+
+    <link name = "sphere_2">
+        <visual>
+            <origin xyz = "0 0 0"/>
+            <geometry>
+                <sphere radius = "0.15"/>
+            </geometry>      
+        </visual>
+    </link>
+
+    <joint name = "sphere_2_joint" type = "fixed">
+        <parent link = "arm_2"/>
+        <child link = "sphere_2"/>
+        <origin xyz = "1.1 -1.1 0.15"/>
+    </joint>
+
+    <link name = "leg_2">
+        <visual>
+            <origin xyz = "0 0 -0.5"/>
+            <geometry>
+                <cylinder radius = "0.05" length = "1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "leg_2_joint" type = "fixed">
+        <parent link = "arm_2"/>
+        <child link = "leg_2"/>
+        <origin xyz = "1.1 -1.1 -0.025"/>
+    </joint>
+
+    <link name="prop_assembly_2">
+
+    
+        <visual>
+          <origin rpy = "1.57 0 0"/>
+            <geometry>
+                <box size="1.65 0.01 0.1"/>
+            </geometry>
+        </visual>
+
+    
+        <visual>
+            <origin rpy="0 0 1.5708"/>
+            <geometry>
+                <box size="1.65 0.1 0.01"/>
+            </geometry>
+        </visual>
+
+    </link>
+
+    <joint name="prop_spin_2" type="continuous">
+        <parent link="sphere_2"/>
+        <child link="prop_assembly_2"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+
+
+
+
+    
+    <link name = "arm_3">
+        <visual>
+            <origin xyz = "-0.5 -0.5 0" rpy = "0 0 0.78539"/>
+            <geometry>
+                <box size = "2 0.2 0.05"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "arm_3_joint" type = "fixed">
+        <parent link = "base_link"/>
+        <child link = "arm_3"/>
+        <origin xyz = "-0.5 -0.5 0" rpy = "0 0 0"/>
+    </joint>
+
+    <link name = "sphere_3">
+        <visual>
+            <origin xyz = "0 0 0"/>
+            <geometry>
+                <sphere radius = "0.15"/>
+            </geometry>      
+        </visual>
+    </link>
+
+    <joint name = "sphere_3_joint" type = "fixed">
+        <parent link = "arm_3"/>
+        <child link = "sphere_3"/>
+        <origin xyz = "-1.1 -1.1 0.15"/>
+    </joint>
+
+    <link name = "leg_3">
+        <visual>
+            <origin xyz = "0 0 -0.5"/>
+            <geometry>
+                <cylinder radius = "0.05" length = "1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "leg_3_joint" type = "fixed">
+        <parent link = "arm_3"/>
+        <child link = "leg_3"/>
+        <origin xyz = "-1.1 -1.1 -0.025"/>
+    </joint>
+ 
+    <link name="prop_assembly_3">
+
+    
+        <visual>
+          <origin rpy = "1.57 0 0"/>
+            <geometry>
+                <box size="1.65 0.01 0.1"/>
+            </geometry>
+        </visual>
+
+    
+        <visual>
+            <origin rpy="0 0 1.5708"/>
+            <geometry>
+                <box size="1.65 0.1 0.01"/>
+            </geometry>
+        </visual>
+
+    </link>
+
+    <joint name="prop_spin_3" type="continuous">
+        <parent link="sphere_3"/>
+        <child link="prop_assembly_3"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+
+
+
+    
+    <link name = "arm_4">
+        <visual>
+            <origin xyz = "-0.5 0.5 0" rpy = "0 0 -0.78539"/>
+            <geometry>
+                <box size = "2 0.2 0.05"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "arm_4_joint" type = "fixed">
+        <parent link = "base_link"/>
+        <child link = "arm_4"/>
+        <origin xyz = "-0.5 0.5 0" rpy = "0 0 0"/>
+    </joint>
+
+    <link name = "sphere_4">
+        <visual>
+            <origin xyz = "0 0 0"/>
+            <geometry>
+                <sphere radius = "0.15"/>
+            </geometry>      
+        </visual>
+    </link>
+
+    <joint name = "sphere_4_joint" type = "fixed">
+        <parent link = "arm_4"/>
+        <child link = "sphere_4"/>
+        <origin xyz = "-1.1 1.1 0.15"/>
+    </joint>
+
+    <link name = "leg_4">
+        <visual>
+            <origin xyz = "0 0 -0.5"/>
+            <geometry>
+                <cylinder radius = "0.05" length = "1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name = "leg_4_joint" type = "fixed">
+        <parent link = "arm_4"/>
+        <child link = "leg_4"/>
+        <origin xyz = "-1.1 1.1 -0.025"/>
+    </joint>
+
+    <link name="prop_assembly_4">
+
+    
+        <visual>
+          <origin rpy = "1.57 0 0"/>
+            <geometry>
+                <box size="1.65 0.01 0.1"/>
+            </geometry>
+        </visual>
+
+    
+        <visual>
+            <origin rpy="0 0 1.5708"/>
+            <geometry>
+                <box size="1.65 0.1 0.01"/>
+            </geometry>
+        </visual>
+
+    </link>
+
+    <joint name="prop_spin_4" type="continuous">
+        <parent link="sphere_4"/>
+        <child link="prop_assembly_4"/>
+        <origin xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+</robot>
