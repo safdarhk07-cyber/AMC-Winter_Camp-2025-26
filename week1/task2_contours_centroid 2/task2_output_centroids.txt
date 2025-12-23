@@ -1,0 +1,4 @@
+circle -> Centroid: (255, 823), circularity=0.86
+triangle -> Centroid: (714, 757), circularity=0.53
+pentagon -> Centroid: (254, 296), circularity=0.76
+octagon -> Centroid: (780, 296), circularity=0.79
