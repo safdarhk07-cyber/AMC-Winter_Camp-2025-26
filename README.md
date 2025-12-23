@@ -11,4 +11,5 @@ This repository includes:
 --> Task 3 - Arena plants detection 
 <br>
 2) Week 2 tasks: <br>
---> Task 1 - Simulating drone visuals
+--> Task 1 - Simulating drone visuals<br>
+--> Task 3 - PID tuning a quadrotor for target altitude
