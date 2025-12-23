@@ -9,3 +9,6 @@ This repository includes:
 --> Task 2 - Centroid & Centroid annotaion
 <br>
 --> Task 3 - Arena plants detection 
+<br>
+2) Week 2 tasks: <br>
+--> Task 1 - Simulating drone visuals
